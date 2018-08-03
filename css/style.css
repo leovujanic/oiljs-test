@@ -51,3 +51,7 @@ pre {
     width: 600px;
     overflow: scroll;
 }
+
+.pc {
+background-color: lightcyan;
+}

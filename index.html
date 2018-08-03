@@ -10,6 +10,8 @@
         "locale_url": "//www.oiljs.loc/locale.json",
         "iabVendorListUrl": "//www.oiljs.loc/data/vendorlist.json",
       }
+
+
     </script>
     <script>
         /*! 1.2.2-SNAPSHOT */
@@ -101,6 +103,7 @@
         <ul>
             <li><a href="#" class="mj-action-js" data-action="optin">Trigger OptIn</a></li>
             <li><a href="#" class="mj-action-js" data-action="optout">Trigger OptOut</a></li>
+            <li><a href="#" class="mj-action-js" data-action="show-pc">Show Preference Center</a></li>
         </ul>
     </section>
 
@@ -117,6 +120,10 @@
 
     </pre>
     </section>
+
+    <div class="pc">
+        <div id="oil-preference-center"></div>
+    </div>
 </main>
 
 <script>
@@ -126,7 +133,9 @@
     if (actionElems) {
         for (let elem of actionElems) {
             const action = elem.dataset["action"];
-            elem.addEventListener("click", () => {
+            elem.addEventListener("click", (e) => {
+                e.preventDefault();
+
                 actionHandler(action);
             });
         }
@@ -142,7 +151,6 @@
     };
 
     const handleCmp = (action) => {
-        console.log("Handle cmp " + action);
         __cmp(action, null, (e) => {
             appendCmpResults(e);
             console.log(e);
@@ -160,6 +168,9 @@
                 break;
             case "optout":
                 AS_OIL.triggerOptOut();
+                break;
+            case "show-pc":
+                AS_OIL.showPreferenceCenter();
                 break;
             default:
                 console.error("Unknown action: " + action);
