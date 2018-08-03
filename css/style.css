@@ -1,0 +1,53 @@
+/* Popup styles */
+div.as-oil-content-overlay {
+    background-color: lightblue;
+}
+
+/* Button styles */
+
+button.as-oil__btn-optin {
+    background-color: red;
+}
+
+/*
+Or like this
+.as-oil__btn-optin {
+    background-color: red!important;
+}
+ */
+
+main {
+    box-sizing: border-box;
+}
+
+main {
+    padding: 30px 0 30px 200px;
+}
+
+h2, h5{
+    color: #606060;
+}
+
+h5 {
+    margin-bottom: -10px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding-bottom: 4px;
+}
+
+ul a {
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+pre {
+    border: 2px solid black;
+    height: 500px;
+    width: 600px;
+    overflow: scroll;
+}
